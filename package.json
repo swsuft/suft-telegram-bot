@@ -6,7 +6,7 @@
     "dev": "nodemon --watch src --delay 1 --exec ts-node src/index.ts",
     "lint": "eslint src/*",
     "start": "tsc && node ./dist",
-    "build": "npm run lint && tsc"
+    "build": "tsc"
   },
   "dependencies": {
     "cors": "^2.8.5",
