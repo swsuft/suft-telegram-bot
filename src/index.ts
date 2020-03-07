@@ -24,7 +24,7 @@ app.use((req, res, next) => {
     next();
 });
 
-const getTokenByHeader = (req: express.Request) => {
+const getTokenByHeader = (req: express.Request): string | undefined => {
     if (req.headers.authorization !== undefined) {
         return req.headers.authorization.toString().split(' ')[1];
     }
