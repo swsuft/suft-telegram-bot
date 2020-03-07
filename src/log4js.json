@@ -1,0 +1,18 @@
+{
+  "appenders": {
+    "console": {
+      "type": "console"
+    },
+    "default": {
+      "type": "file",
+      "filename": "logs/serverlog.log",
+      "pattern": "-yyyy-MM-dd",
+      "maxLogSize": 800000,
+      "backups": 100,
+      "compress": true
+    }
+  },
+  "categories": {
+    "default": { "appenders": [ "default", "console" ], "level": "DEBUG" }
+  }
+}
