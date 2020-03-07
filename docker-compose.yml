@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  suftbot:
+    restart: always
+    container_name: suft-telegram-bot
+    image: suft-telegram-bot
+    ports:
+      - "2012:8080"
+    volumes:
+      - "/home/${USER}/docker/suft/bot_logs:/workspace/logs"
+    environment:
+      BOT_TOKEN: "${BOT_TOKEN}"
+      API_TOKEN: "${API_TOKEN}"
+      OWNER_ID: "${OWNER_ID}"
+      ENDPOINT: "${ENDPOINT}"
+      TZ: Asia/Seoul
