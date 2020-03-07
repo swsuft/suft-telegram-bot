@@ -6,7 +6,7 @@ services:
     container_name: suft-telegram-bot
     image: suft-telegram-bot
     ports:
-      - "2012:8080"
+      - "2013:8080"
     volumes:
       - "/home/${USER}/docker/suft/bot_logs:/workspace/logs"
     environment:
