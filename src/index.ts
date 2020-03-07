@@ -17,6 +17,8 @@ logger.level = 'ALL';
 
 app.set('trust proxy', true);
 app.use(cors({ origin: process.env.ENDPOINT, credentials: true }));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use((req, res, next) => {
     const { method, originalUrl, ip } = req;
     const ua = req.get('User-Agent');
@@ -32,8 +34,9 @@ const getTokenByHeader = (req: express.Request): string | undefined => {
     return undefined;
 };
 
-app.get('/notification/waitinguser', (req, res) => {
+app.post('/notification/waitinguser', (req, res) => {
     const token = getTokenByHeader(req);
+    const { email, name, grade } = req.body;
 
     if (token !== process.env.API_TOKEN) {
         logger.warn('올바르지 않는 TOKEN으로 요청을 시도했습니다.');
