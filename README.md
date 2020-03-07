@@ -12,7 +12,7 @@
 - `dev` `feature/~`
     - 개발 중인 코드
     
-# Environment Variables
+## Environment Variables
 - `BOT_TOKEN`
     - 텔레그램 봇 토큰
 - `API_TOKEN`
