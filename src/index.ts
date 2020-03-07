@@ -46,7 +46,29 @@ app.post('/notification/waitinguser', (req, res) => {
         return;
     }
 
-    res.sendStatus(200);
+    if (email === undefined || name === undefined || grade === undefined) {
+        res.sendStatus(400);
+        return;
+    }
+
+    const text = `
+새로운 가입 요청이 있습니다!
+이메일: ${email}
+이름: ${name}
+학년: ${grade}학년
+
+https://suft.kr/admin
+    `;
+
+    bot.sendMessage(process.env.OWNER_ID!, text)
+        .then(() => {
+            logger.info('가입 요청 메세지를 전달하였습니다.');
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            logger.error(`가입 요청 메세지 전달 중 오류가 발생하였습니다. \n${err}`);
+            res.sendStatus(500);
+        });
 });
 
 BotCommand();

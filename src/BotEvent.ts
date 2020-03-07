@@ -1,6 +1,6 @@
 import { bot, logger } from './index';
 
-const BotEvent = () => {
+const BotEvent = (): void => {
     bot.on('message', (msg) => {
         // eslint-disable-next-line
         const { id, last_name, first_name } = msg.chat;

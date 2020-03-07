@@ -1,6 +1,6 @@
 import { bot } from './index';
 
-const BotCommand = () => {
+const BotCommand = (): void => {
     bot.onText(/\/help/, (msg) => {
         const chatId = msg.chat.id;
         const text = `수프트 가입신청 알림을 보내는 봇입니다.
