@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import TelegramBot from 'node-telegram-bot-api';
 import logconfig from './log4js.json';
+import BotCommand from './BotCommand';
 
 dotenv.config();
 
@@ -46,6 +47,8 @@ app.post('/notification/waitinguser', (req, res) => {
 
     res.sendStatus(200);
 });
+
+BotCommand();
 
 const port = 8080;
 app.listen(port, () => logger.info(`suft telegram-bot api listening on ${port}`));
