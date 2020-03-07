@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import TelegramBot from 'node-telegram-bot-api';
 import logconfig from './log4js.json';
 import BotCommand from './BotCommand';
+import BotEvent from './BotEvent';
 
 dotenv.config();
 
@@ -49,6 +50,7 @@ app.post('/notification/waitinguser', (req, res) => {
 });
 
 BotCommand();
+BotEvent();
 
 const port = 8080;
 app.listen(port, () => logger.info(`suft telegram-bot api listening on ${port}`));
