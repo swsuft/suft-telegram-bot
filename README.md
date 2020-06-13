@@ -1,5 +1,8 @@
 # suft-telegram-bot [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org) 
-수프트 관리를 위해 사용하는 텔레그램 봇
+
+WebHook 방식으로 변경하여 더 이상 사용하지 않습니다.
+
+수프트 관리를 위해 사용했었던 텔레그램 봇
 
 ## 기능
 - 수프트 가입신청 시 봇을 통해 알림을 보냅니다.
